@@ -8,9 +8,8 @@ def load_data(filepath):
 from pprint_json import load_data
 
 def pretty_print_json(data):
-    file_name = input("Введите путь к файлу без кавычек, включая расширение: ", )
-    data=load_data(file_name)
-    print (json.dumps(data, ensure_ascii=False, sort_keys=True, indent=4))
+    data = input("Введите путь к файлу без кавычек, включая расширение: ", )
+    print (json.dumps(load_data(data), ensure_ascii=False, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':

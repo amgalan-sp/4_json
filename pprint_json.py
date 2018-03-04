@@ -3,15 +3,14 @@ import json
 
 def load_data(filepath):
     with open(filepath, 'r', encoding="Latin-1") as file_handler:
-        data1=json.load(file_handler)
-        return data1
+        return json.load(file_handler)
+
+from pprint_json import load_data
 
 def pretty_print_json(data):
-    from pprint_json import load_data
-    data = str(input("Введите путь к файлу без кавычек, включая расширение: ", ))
-    game = (load_data(data))
-    rule = json.dumps(game, ensure_ascii=False, sort_keys=True, indent=4)
-    print(rule)
+    filepath = input("Введите путь к файлу без кавычек, включая расширение: ", )
+    data = (load_data(filepath))
+    print (json.dumps(data, ensure_ascii=False, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':
